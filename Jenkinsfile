@@ -46,7 +46,7 @@ pipeline {
 
     stage('Deploy') {
         steps {
-           sh 'java -jar /home/ubuntu/*.jar'
+           sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.47.62  java -jar /home/ubuntu/*.jar'
         }
     }
 
