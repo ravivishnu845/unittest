@@ -33,8 +33,20 @@ pipeline {
     }
 
     stage('HTML_Publish') {
-	steps {
-	   junit 'target/surefire-reports/TEST-*.xml'
+	     steps {
+	         junit 'target/surefire-reports/TEST-*.xml'
+        }
+    }
+
+    stage('Copy_to_devmachine') {
+        steps {
+           sh 'scp target/*.jar ubuntu@172.31.47.62:/home/ubuntu'
+        }
+    }
+
+    stage('Deploy') {
+        steps {
+           sh 'java -jar /home/ubuntu/*.jar'
         }
     }
 
