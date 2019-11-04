@@ -40,7 +40,7 @@ pipeline {
 
     stage('Copy_to_devmachine') {
         steps {
-           sh 'scp target/*.jar -o StrictHostKeyChecking=no ubuntu@172.31.47.62:/home/ubuntu'
+           sh 'scp -o StrictHostKeyChecking=no target/*.jar  ubuntu@172.31.47.62:/home/ubuntu'
         }
     }
 
