@@ -3,11 +3,11 @@ import static org.junit.Assert.assertEquals;
 
 public class AdditionTest {
 
-  Addition myAddition = new Addition(10,16);
+  Addition myAddition = new Addition(10,16,20);
 
   @Test
   public void testGetSum() {
-    assertEquals(26,myAddition.getSum());
+    assertEquals(46,myAddition.getSum());
   }
 
   @Test
