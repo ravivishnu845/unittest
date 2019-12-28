@@ -38,18 +38,6 @@ pipeline {
         }
     }
 
-    stage('Copy_to_devmachine') {
-        steps {
-           sh 'scp -o StrictHostKeyChecking=no target/*.jar  ubuntu@172.31.47.62:/home/ubuntu'
-        }
-    }
-
-    stage('Deploy') {
-        steps {
-           sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.47.62  java -jar /home/ubuntu/*.jar'
-        }
-    }
-
   }
 
 }
